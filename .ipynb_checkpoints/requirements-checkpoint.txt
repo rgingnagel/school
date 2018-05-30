@@ -6,3 +6,4 @@ pandas==0.20.3
 seaborn==0.8.0
 numpy==1.13.3
 dash_renderer==0.12.1
+geopy==1.13.0
