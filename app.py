@@ -303,10 +303,9 @@ De kaart hieronder laat met behulp van kleur zien hoe groot het verwachtte lerar
 
 Het kan voorkomen dat een leraar door bijv. ziekte onverhoopt niet voor zijn klas kan staan. Door het lerarentekort is er in dit geval helaas vaak **geen vervangende docent beschikbaar**. Daarom moet er gekozen worden voor oplossingen zoals het naar huis sturen van de klas of het laten doceren door een onbevoegde. Om de gevolgen van het probleem in kaart te brengen zijn dit soort situaties in 2018 door scholen bijgehouden. 
 
-Hieronder kan je deze data **interactief** verkennen. De blauwe bolletjes op de kaart links staan voor de Nederlandse steden, **klik** op een bolletje om de statistieken van een stad te bekijken. Je kan de maanden die je mee wilt nemen in de visualisatie aanpassen met de **slider** bovenaan. 
+Hieronder kan je deze **data interactief verkennen**. De gekleurde bolletjes op de kaart links staan voor de Nederlandse steden, **klik** op een bolletje om de statistieken van een stad te bekijken. De kleuren van de bolletjes komen overeen met de staaf grafiek rechts en laten zien wat de **meeste voorkomende oplossing** in die stad is. Je kan de maanden die je mee wilt nemen in de visualisatie aanpassen met de **slider** bovenaan.
 
-Rechts bovenin zie je een tabel die de specifieke aantallen laat zien. Rechts onderin zie je een grafiek die laat zien hoe de oplossingen in de stad en in de rest van Nederland verdeeld zijn. **Hover** over de grafiek om de precieze procenten te zien. Door te slepen en klikken kan je de grafiek aanpassen. 
-''', className='container',
+Rechts bovenin zie je een tabel die de specifieke aantallen laat zien. Rechts onderin zie je een staaf grafiek die laat zien hoe de oplossingen in de stad en in de rest van Nederland verdeeld zijn. **Hover** met de muis over de staaf grafiek om de precieze procenten te zien. Door te slepen en klikken kan je de grafiek aanpassen.''', className='container',
     containerProps={'style': {'maxWidth': '650px'}}),
     dcc.RangeSlider(
         id="my-slider",
@@ -345,14 +344,14 @@ Rechts bovenin zie je een tabel die de specifieke aantallen laat zien. Rechts on
     ], style={'float': 'right'}),
     html.Div([
     html.H2("Toename tekort", style={'margin-top': '80px'}),
-    html.P("Zoals duidelijk wordt uit bovenstaande visualisatie zijn er nu al veel negatieve gevolgen van het lerarentekort. Er wordt echter voorspelt dat als we de huidige koers blijven varen het lerarentekort en de bijbehorende problemen alleen maar groter worden. "),
-    html.P("Hover met de muis over onderstaande grafiek om de verwachtingen te zien."),
+    dcc.Markdown('''Zoals duidelijk wordt uit bovenstaande interactieve visualisatie zijn er nu al veel negatieve gevolgen van het lerarentekort. Er wordt echter voorspelt dat als we de huidige koers blijven varen het **lerarentekort** en de bijbehorende **problemen** alleen maar **groter worden**.'''),
+    dcc.Markdown('''**Hover** met de muis over onderstaande grafiek om de verwachtingen te zien.'''),
     dcc.Graph(id="line-chart",
             figure=generateLineChart(),
             config={
         'displayModeBar': False
     }),
-    html.P("Het lerarentekort wordt voornamelijk veroorzaakt door te weinig loon en een hoge werkdruk. Goed onderwijs is een van de pijlers van de samenleving en daarom is een betere CAO voor docenten in het primair onderwijs hard nodig!"),
+    dcc.Markdown('''Het lerarentekort wordt voornamelijk veroorzaakt door te **weinig loon** en een **hoge werkdruk**. Goed onderwijs is een van de pijlers van de samenleving en daarom is een **betere CAO** voor docenten in het primair onderwijs hard nodig!'''),
     ], className='container', style={'maxWidth': '650px'}
     )
 ])
